@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnSalvaImpostazioni" xml:space="preserve">
+    <value>SALVA IMPOSTAZIONI</value>
+  </data>
+  <data name="chkCHECK_MONITOR" xml:space="preserve">
+    <value>MONITORA DURATA CONTROLLI CASELLA DI POSTA NEL LOG</value>
+  </data>
+  <data name="chkDOPPPIO_CLICK" xml:space="preserve">
+    <value>APRI GMAIL AL DOPPIO CLICK SULL'ICONA</value>
+  </data>
+  <data name="chkMainPwd" xml:space="preserve">
+    <value>CHIEDI PASSWORD DI SISTEMA AD OGNI AVVIO</value>
+  </data>
+  <data name="chkMOSTRA_NOTIFICHE_MESSAGGI_AUTO" xml:space="preserve">
+    <value>MOSTRA NOTIFICHE MESSAGGI IN AUTOMATICO</value>
+  </data>
+  <data name="chkMOSTRA_NOTIFICA_ERRORE" xml:space="preserve">
+    <value>MOSTRA NOTIFICA ERRORE IN AUTOMATICO</value>
+  </data>
+  <data name="chkRAD_NOTIFIER" xml:space="preserve">
+    <value>UTILIZZA NOTIFICHE STILE OUTLOOK</value>
+  </data>
+  <data name="grLogErroriMessaggiImap" xml:space="preserve">
+    <value>LOG ERRORI MESSAGGI IMAP</value>
+  </data>
+  <data name="grLogScanMessaggiImap" xml:space="preserve">
+    <value>LOG SCAN MESSAGGI IMAP</value>
+  </data>
+  <data name="lblDeltaAltezzaNotifica" xml:space="preserve">
+    <value>DELTA ALTEZZA NOTIFICA (pixel)</value>
+  </data>
+  <data name="lblFrequenzaAggiornamento" xml:space="preserve">
+    <value>FREQUENZA AGGIORNAMENTO (millisecondi)</value>
+  </data>
+  <data name="lblPasswordSistema" xml:space="preserve">
+    <value>PASSWORD DI SISTEMA</value>
+  </data>
+  <data name="lblPortImap" xml:space="preserve">
+    <value>PORTA IMAP</value>
+  </data>
+  <data name="lblServerImap" xml:space="preserve">
+    <value>SERVER IMAP</value>
+  </data>
+  <data name="lblSettingStatusNO" xml:space="preserve">
+    <value>IMPOSTAZIONI DI CONNESSIONE ASSENTI! PROCEDERE ALLA MEMORIZZAZIONE!</value>
+  </data>
+  <data name="lblSettingStatusOK" xml:space="preserve">
+    <value>IMPOSTAZIONI DI CONNESSIONE OK!</value>
+  </data>
+  <data name="lblTemaDefaultStileOutlook" xml:space="preserve">
+    <value>TEMA DI DEFAULT NOTIFICA STILE OUTLOOK</value>
+  </data>
+  <data name="TAB_IMPOSTAZIONI" xml:space="preserve">
+    <value>GESTIONE IMPOSTAZIONI</value>
+  </data>
+  <data name="TAB_IMPOSTAZIONI_CONNESSIONE" xml:space="preserve">
+    <value>IMPOSTAZIONI DI CONNESSIONE</value>
+  </data>
+  <data name="TAB_IMPOSTAZIONI_SISTEMA" xml:space="preserve">
+    <value>IMPOSTAZIONI DI SISTEMA</value>
+  </data>
+  <data name="TAB_LOG" xml:space="preserve">
+    <value>LOG APPLICAZIONE</value>
+  </data>
+</root>
