@@ -13,8 +13,11 @@ Take a look at the "Program.cs":
         .If yes it starts with MGN_LOGIN.cs
         .If not it starts with MGN_IMPOSTAZIONI.cs
     .If not, it starts with MGN_SET_PASSWORD.cs (it means it is the very first time the application is started)
-.When the MGN_IMPOSTAZIONI.cs is opened, the user is prompted to insert the IMAP server, the IMAP PORT, the USERNAME and the PASSWORD to establish a connection. All these info are stored in the properties of the application.
+.When the MGN_IMPOSTAZIONI.cs is opened for the first time, the user is prompted to insert the IMAP server, the IMAP PORT, the USERNAME and the PASSWORD to establish a connection. All these info are stored in the properties of the application and can be changed anytime.
 .There're few options which can be set to customize the application (timer frequency, auto notifications, log recording, notification aspect...)
+
+When the user starts the application from the second time onwards, it starts as a tray icon (similar to the original Gmail Notifier). The tray icon becomes green when it checks the imap folder, then gray if doesn't find any new messages, or blue if there're new messages to be opened. There's a context menu with some options (open settings, open gmail, pop up the last notification and check now the imap folder).
+Double clicking the tray icon, the application will open "gmail.google.com" with your default browser (this option can be disabled).
 
 IMPORTANT: the application does NOT change the flag of the imap emails, but mark them as unread another time:
               var flags = new FlagCollection();
