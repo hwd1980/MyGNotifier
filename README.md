@@ -19,7 +19,7 @@ Take a look at the "Program.cs":
 When the user starts the application from the second time onwards, it starts as a tray icon (similar to the original Gmail Notifier). The tray icon becomes green when it checks the imap folder, then gray if it doesn't find any new messages, or blue if there're new messages to be opened. There's a context menu with some options (open settings, open gmail, pop up the last notification and check now the imap folder).
 Double clicking the tray icon, the application will open "gmail.google.com" with your default browser (this option can be disabled).
 
-IMPORTANT: the application does NOT change the flag of the imap emails, but mark them as unread another time:
+IMPORTANT: the application does NOT change the flag of the imap emails, but it marks them as unread another time:
               var flags = new FlagCollection();
               flags.Add("Seen");
               inbox.RemoveFlags(ids[i], flags);
