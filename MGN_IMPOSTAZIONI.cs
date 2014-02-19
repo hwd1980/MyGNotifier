@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -558,6 +558,8 @@ namespace MyGNotifier
 
         public void MYG_IMAP_READ_AND_MARK_ALWAYS_CONNECT()
         {
+            int iCountNew = 0;
+            string sNewMsgs = "";
             DateTime dtInizio = DateTime.Now;
             nIcon.Icon = MyGNotifier.Properties.Resources.MyGNotify_Checking;
             nIcon.Text = "STO CONTROLLANDO LA CASELLA DI POSTA...";
@@ -605,30 +607,17 @@ namespace MyGNotifier
                     int[] ids = inbox.Search("UNSEEN");
                     if (ids.Length > 0)
                     {
-                        iCountIDS = 0;
+                        ActiveUp.Net.Mail.Message msg = null;
+
                         for (var i = 0; i < ids.Length; i++)
                         {
-                            if (!MSGS_ID.Contains(ids[i].ToString()))
+                            msg = inbox.Fetch.MessageObject(ids[i]);
+
+                            string UNIQUE_ID = msg.Date.ToString() + msg.From.ToString();
+                            if (!MSGS_ID.Contains(UNIQUE_ID))
                             {
-                                iCountIDS++;
-                                MSGS_ID.Add(ids[i].ToString());
-                            }
-                        }
-
-                        if (iCountIDS > 0)
-                        {
-                            iLastCOUNT = iCountIDS;
-                            MSGS_DETAILS = "";
-                            nIcon.Icon = MyGNotifier.Properties.Resources.MyGNotify_Check;
-                            nIcon.Text = iCountIDS > 1 ? "SONO PRESENTI " + iCountIDS + " NUOVI MESSAGGI" : "E' PRESENTE 1 NUOVO MESSAGGIO!";
-
-                            bNewMsgICON = true;
-                            NEW_MSGS = true;
-                            ActiveUp.Net.Mail.Message msg = null;
-
-                            for (var i = 0; i < ids.Length; i++)
-                            {
-                                msg = inbox.Fetch.MessageObject(ids[i]);
+                                iCountNew++;
+                                MSGS_ID.Add(UNIQUE_ID);
 
                                 rtLog.Text += DateTime.Now.ToString() + "\n";
                                 rtLog.Text += "DATA: " + msg.Date + "\n";
@@ -636,16 +625,25 @@ namespace MyGNotifier
                                 rtLog.Text += "OGGETTO: " + msg.Subject + "\n";
                                 rtLog.Text += "----------------------------\n";
 
-                                MSGS_DETAILS += "DATA: " + msg.Date + "\n";
-                                MSGS_DETAILS += "MITTENTE: " + msg.From + "\n";
-                                MSGS_DETAILS += "OGGETTO: " + msg.Subject + "\n";
-                                MSGS_DETAILS += "---------------------------\n";
-                                
-                                //mark as unread
-                                var flags = new FlagCollection();
-                                flags.Add("Seen");
-                                inbox.RemoveFlags(ids[i], flags);
+                                sNewMsgs += "DATA: " + msg.Date + "\n";
+                                sNewMsgs += "MITTENTE: " + msg.From + "\n";
+                                sNewMsgs += "OGGETTO: " + msg.Subject + "\n";
+                                sNewMsgs += "---------------------------\n";
                             }
+                            //mark as unread
+                            var flags = new FlagCollection();
+                            flags.Add("Seen");
+                            inbox.RemoveFlags(ids[i], flags);
+                        }
+                        if (iCountNew > 0)
+                        {
+                            iLastCOUNT = iCountNew;
+                            MSGS_DETAILS = sNewMsgs;
+                            nIcon.Icon = MyGNotifier.Properties.Resources.MyGNotify_Check;
+                            nIcon.Text = iCountNew > 1 ? "SONO PRESENTI " + iCountNew + " NUOVI MESSAGGI" : "E' PRESENTE 1 NUOVO MESSAGGIO!";
+
+                            bNewMsgICON = true;
+                            NEW_MSGS = true;
                         }
                         else
                         {
@@ -746,14 +744,7 @@ namespace MyGNotifier
             }
             else
             {
-                if (MyGNotifier.Properties.Settings.Default.MAIN_KEEP_CONNECTION_ALIVE)
-                {
-                    MYG_IMAP_READ_AND_MARK(GMAIL_IMAP);
-                }
-                else
-                {
-                    MYG_IMAP_READ_AND_MARK_ALWAYS_CONNECT();
-                }
+                MYG_IMAP_READ_AND_MARK_ALWAYS_CONNECT();
             }
         }
 
